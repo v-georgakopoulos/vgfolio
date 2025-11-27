@@ -1,0 +1,48 @@
+@import "../../styles/main.scss";
+@import "../../styles/mixins.scss";
+
+.loader-container {
+  height: 100vh;
+  @include flex-center;
+  flex-direction: column;
+  background:var(--background);
+  color:var(--primary-font-color);
+
+  @include md {
+    width: 500px;
+    margin: auto;
+  }
+  @include sm {
+    width: 300px;
+    margin: auto;
+  }
+
+  p {
+    font-size: 1.1rem;
+    font-family: "Orbitron";
+  }
+
+  .progress-bar {
+    width: 500px;
+    height: 10px;
+    background: var(--background);
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+
+    @include sm {
+      width: 300px;
+      text-align: center;
+    }
+  
+  }
+
+  .progress {
+    height: 100%;
+    background: var(--primary-font-color);
+    width: 0;
+    transition: width 0.1s linear;
+  }
+}
+
+

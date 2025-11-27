@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Share+Tech&display=swap');
+@import "../styles/mixins.scss";
+:root {
+    --background: #000000;
+    --background-alt: rgb(22, 22, 22);
+    --primary-font-color: #b31b6f;
+    --header-font-color: #0b9fbd;
+    --header-font: 'Orbitron', sans-serif;
+    --body-font: 'Montserrat', sans-serif;
+    --box-shadow: 0 4px 12px var(--primary-font-color);
+}
+
+:root[data-theme="dark-mode"] {
+    --background: #000000;
+    --background-alt: rgb(22, 22, 22);
+    --primary-font-color: #b6b1b1;
+    --header-font-color: #7a7373;
+    --header-font: 'Orbitron', sans-serif;
+    --body-font: 'Montserrat', sans-serif;
+    --box-shadow: 0 4px 12px var(--primary-font-color);
+}
+
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--background);
+    color: var(--primary-font-color);
+    font-family: var(--body-font);
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--header-font);
+    color: var(--header-font-color);
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    @include sm {
+        font-size: 1.5rem;
+    }
+}
+
+p {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    font-size: 1rem;
+    color: var(--primary-font-color);
+    font-weight: 700;
+
+    @include sm {
+        font-size: 0.9rem;
+    }
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-font-color);
+    border-radius: 8px;
+    color: var(--background);
+    font-size: 1.2rem;
+    border: 1px solid var(--primary-font-color);
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+
+    &:hover {
+        background-color: var(--background);
+        color: var(--primary-font-color);
+
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-font-color);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--header-font-color);
+}

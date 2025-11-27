@@ -1,0 +1,43 @@
+@import "../../styles//mixins.scss";
+
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+
+    @include sm {
+        width: calc(100% - 20px);
+        margin: auto;
+    }
+
+    .social-icons {
+        ul {
+            display: flex;
+            gap: 30px;
+            padding-bottom: 5px;
+
+            li {
+                a {
+                    display: inline-block;
+                    font-size: 1.3rem;
+                    color: var(--primary-font-color);
+                    transition: transform 0.3s;
+
+                    &:hover {
+                        transform: scale(1.2);
+                    }
+                }
+            }
+        }
+
+    }
+
+    p {
+        text-align: center;
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+}

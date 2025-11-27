@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider } from "./context/ThemeContext"
+import { useEffect, useState } from "react"
 
-function App() {
+import Navigation from "./components/Navigation/Navigation"
+import Home from "./components/Home/Home"
+import About from "./components/About/About"
+import Portfolio from "./components/Portfolio/Portfolio"
+import Contact from "./components/Contact/Contact"
+import Footer from "./components/Footer/Footer"
+
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop"
+import Loader from "./components/Loader/Loader"
+
+const App = () => {
+  const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 3000); 
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider>
+        {isLoading ? (<Loader onFinish={() =>setIsLoading(false)} />) : (
+          <>   
+            <Navigation />
+            <Home />
+            <About />
+            <Portfolio />
+            <Contact />
+            <Footer />
+            <ScrollToTop />
+          </>
+        )}
+      </ThemeProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
