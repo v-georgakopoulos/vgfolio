@@ -16,8 +16,8 @@ const projects = [
         title: "Podcast Player",
         tags: [faReact, faSass, faNodeJs],
         image: podcastPlayerImg,
-        githubLink: "https://github.com/v-georgakopoulos/podcast-player",
-        liveLink: "https://podcast-player-75d8.onrender.com/"
+        githubLink: "https://github.com/v-georgakopoulos/podcast-player-v-react",
+        liveLink: "https://podcast-player-v-react.onrender.com/"
     },
     {
         id: 2,
