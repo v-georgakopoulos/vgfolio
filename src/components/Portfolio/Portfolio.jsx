@@ -37,11 +37,11 @@ const projects = [
     },
     {
         id: 4,
-        title: "My Eshop",
+        title: "mebtque",
         tags: [faReact, faSass, faNodeJs],
         image: myEshopImg,
-        githubLink: "",
-        liveLink: ""
+        githubLink: "https://github.com/v-georgakopoulos/meboutique",
+        liveLink: "https://mebtque.netlify.app/"
     },
 ];
 
